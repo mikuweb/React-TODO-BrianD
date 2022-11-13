@@ -16,7 +16,7 @@ export const TodoList = () => {
 
   return (
     <div>
-      <h1>What's the Plan for Today?</h1>
+      <h1>What's the Plan for tomorrow?</h1>
       <TodoForm onSubmit={addTodo} />
     </div>
   );
