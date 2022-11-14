@@ -44,3 +44,5 @@ export const Todo = ({ todos, completeTodo, removeTodo, upDateTodo }) => {
 // それとももともと備わってる機能？
 
 //todo.text←どこからきた？
+
+//edit={edit} ←どこからきた？
