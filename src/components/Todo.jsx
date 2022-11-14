@@ -46,3 +46,6 @@ export const Todo = ({ todos, completeTodo, removeTodo, upDateTodo }) => {
 //todo.text←どこからきた？
 
 //edit={edit} ←どこからきた？
+
+//className={todo.isComplete ? "todo-row complete" : "todo-row"}
+//↑Todoクリックしたら”todo-row complete”でopacity 0.4にはどこに書いてある？
