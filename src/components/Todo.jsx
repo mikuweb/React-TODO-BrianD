@@ -3,7 +3,7 @@ import { TodoList } from "./TodoList";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 
-export const Todo = ({ todos, completeTodo }) => {
+export const Todo = ({ todos, completeTodo, removeTodo }) => {
   const [edit, setEdit] = useState({
     id: null,
     value: "",
@@ -19,8 +19,8 @@ export const Todo = ({ todos, completeTodo }) => {
       </div>
 
       <div className="icons">
-        <RiCloseCircleLine />
-        <TiEdit />
+        <RiCloseCircleLine onClick={() => removeTodo(todo.id)} />
+        <TiEdit onClick={() => setEdit({ id: todo.id, value: todo.text })} />
       </div>
     </div>
   ));
@@ -29,3 +29,5 @@ export const Todo = ({ todos, completeTodo }) => {
 // ----- Question -----
 // todo.isComplete　←どこで定義してる？
 // それとももともと備わってる機能？
+
+//todo.text←どこからきた？
