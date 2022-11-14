@@ -2,12 +2,25 @@ import { useState } from "react";
 import { TodoList } from "./TodoList";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
+import { TodoForm } from "./TodoForm";
 
-export const Todo = ({ todos, completeTodo, removeTodo }) => {
+export const Todo = ({ todos, completeTodo, removeTodo, upDateTodo }) => {
   const [edit, setEdit] = useState({
     id: null,
     value: "",
   });
+
+  const submitUpdate = (value) => {
+    upDateTodo(edit.id, value);
+    setEdit({
+      id: null,
+      value: "",
+    });
+  };
+
+  if (edit.id) {
+    return <TodoForm edit={edit} onSubmit={submitUpdate} />;
+  }
 
   return todos.map((todo, index) => (
     <div
